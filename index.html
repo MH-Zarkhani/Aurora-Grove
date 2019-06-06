@@ -35,19 +35,19 @@
       <div id="my-nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#explore">Explore</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Explore</a>
+            <a class="nav-link" href="#galleries">gallery</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Book</a>
+            <a class="nav-link" data-toggle="modal" href="#" data-target="#book-modal">Book</a>
           </li>
         </ul>
       </div>
@@ -65,7 +65,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
           voluptatibus.
         </p>
-        <button id="book" class="btn btn-my-primary btn-lg px-5" href="">
+        <button id="book" class="btn btn-my-primary btn-lg px-5" data-toggle="modal" data-target="#book-modal">
           Book Now
         </button>
       </div>
@@ -204,7 +204,7 @@
       </div>
     </section>
     <!-- gallery section -->
-    <section id="gallery">
+    <section id="galleries">
       <div class="container">
         <div class="row">
           <div class="col-md-7 mb-3">
@@ -401,22 +401,69 @@
     <section id="footer">
       <ul class="nav text-center justify-content-center">
         <li class="nav-item">
-          <a class="nav-link text-white-50" href="">FAQ</a>
+          <a class="nav-link text-white-50" href="#contact">FAQ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white-50" href="">EXPRIENCE</a>
+          <a class="nav-link text-white-50" href="#galleries">gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white-50" href="">EXPLORE</a>
+          <a class="nav-link text-white-50" href="#explore">EXPLORE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white-50" href="">CONTACT</a>
+          <a class="nav-link text-white-50" href="#contact">CONTACT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white-50" href="">BOOK NOW</a>
+          <a class="nav-link text-white-50" href="#" data-toggle="modal" data-target="#book-modal">BOOK NOW</a>
         </li>
       </ul>
     </section>
+    
+    <!-- book modal -->
+    <div id="book-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="book-modal-title" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Booking</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Please fill out the form below and we'll get back to you as soon as possible</p>
+            <form action="">
+              <div class="form-group"> 
+                <label for="email">Email Address</label>
+                <input class="form-control" type="email" name="email" placeholder="name@example.com">
+              </div>
+              <div class="form-group"> 
+                <label for="adult">Number of Adaults</label>
+                <select class="form-control" name="adult">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-group"> 
+                <label for="child">Number of children</label>
+                <select class="form-control" name="child">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="request">Additional Request</label>
+                <textarea class="form-control" name="request" rows="5"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-my-primary">Submit Resquest</button>
+            <button class="btn btn-dark" data-dismiss="modal" >close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- javascript libraries -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -429,5 +476,10 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assets/bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+    <script>
+      $('#book-madal').on('shown.bs.modal', function () {
+        $('#book-madal').trigger('focus')
+      });
+    </script>
   </body>
 </html>
