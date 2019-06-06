@@ -90,6 +90,18 @@ section:not(:first-child) {
      }
 }
 
+//footer
+
+#footer {
+    margin: 0 ;
+    padding: 0 ;
+    background: #212121;
+    font-weight: 300;
+    li:hover {
+     font-weight:500;
+    }
+}
+
 //custom media query
   @media (max-width: 576px) {
     .navbar-brand h3{
